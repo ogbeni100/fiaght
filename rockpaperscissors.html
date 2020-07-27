@@ -2,30 +2,44 @@
 
 <body>
 
+<script>
+ function computerPlay( Rock, Paper, Scissors) {
+     var random = Math.floor(Math.random () * 2);
+     if (random <= .5) {
+         return "Paper";
+     } else if (random >= .5 && random <= 1) {
+         return "Rock";
+     } else {
+         return "Scissors"
+     }
+ }
 
-    <script>
-
-function computerPlay() {
-    console.log (Rock, Paper, Scissors);
-
+function round(computerSelection, playerSelection) {
+ if (computerSelection.toLowerCase() == playerSelection.toLowerCase()){
+     return "Draw!";
+ } else if (computerSelection.toLowerCase() == "paper" && playerSelection.toLowerCase() == "scissors") {
+     return "You Won!";
+ } else if (computerSelection.toLowerCase() == "paper" && playerSelection.toLowerCase() == "rock"){
+     return "You lose! Paper beats rock!";
+ } else if (computerSelection.toLowerCase() == "scissors" && playerSelection.toLowerCase() == "paper") {
+     return "You Lose! Scissors beat paper";
+ } else if (computerSelection.toLowerCase() == "scissors"  &&  playerSelection.toLowerCase() == "rock"){
+     return "You Win! Rock beats scissors"; 
+ } else if (computerSelection.toLowerCase() == "rock"  && playerSelection.toLowerCase() == "scissors") {
+     return "You Lose! Rock beats scissors.";
+ } else if (computerSelection.toLowerCase() == "rock"  && playerSelection.toLowerCase() == "paper") {
+     return "You win! Paper beats rock!";
+ } else {
+     return "Invalid Entry!"
+ }
 }
-
-function firstPlay(playerSelection, computerSelection) {
-   if (playerSelection.toLowerCase() == rock, computerSelection.toLowerCase() == paper){
-       alert ("You Lose! Paper beats Rock");
-   } else {
-      alert ("You won!");
-   }
-}
-console.log (alert)
-
-let playerSelection = prompt("Welcome to Rock, Paper, Scissors game. Enter your choice:");
-const playerSelection = 'rock'
-const computerSelection = computerPlay()
-
-        </script>
+    
+const computerSelection = computerPlay();
+const playerSelection = prompt("Rock, Paper or Scissors? Your Choice");
+console.log( round(computerSelection,playerSelection));
+    </script>
 
 
 
 
-</body>
+    </body>
